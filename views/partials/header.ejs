@@ -7,24 +7,23 @@
     </head>
     <body>
         
-        <nav class="navbar navbar-expand-md bg-light sticky-top">
+        <nav class="navbar navbar-expand-sm navbar-light bg-warning sticky-top">
             <div class="container-fluid">
                 <div class="navbar-header"> <a class="navbar-brand" href="/">YelpCamp</a> </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="false">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navb">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <div id="navb" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav ml-auto">
-                        <% if(!currentUser){ %>
-                            <li><a href="/login">Login</a></li>
-                            <li><a href="/register">Sign Up</a></li>
-                        <% } else{ %>
-                            <li><a href="#">Signed In As <%=currentUser.username%> </a></li>
-                            <li><a href="/logout">Logout</a></li>
-                        <% } %>
-                    </ul>
+                <div id="navb" class="navbar-collapse collapse navbar-nav" style="justify-content: space-around;">
+                    <% if(!currentUser){ %>
+                        <li class="nav-item"><a href="/login">Login</a></li>
+                        <li class="nav-item"><a href="/register">Sign Up</a></li>
+                    <% } else{ %>
+                        <li class="nav-item"><a href="#">Signed In As <%=currentUser.username%> </a></li>
+                        <li class="nav-item"><a href="/logout">Logout</a></li>
+                    <% } %>
                 </div>
+                
             </div>
         </nav>
         <div class="container">
